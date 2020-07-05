@@ -1,4 +1,18 @@
 <h1>Please select one of our awesome friends and skills</h1>
 <form method="SKILL" action="/skills">
-    
+    Friend: <br />
+    <select name="user_id">
+    <% @users.each do |user| %>
+        <option value="<%= user.id%>"> <%= user.name %></option>
+    <% end %>
+    </select><br />
+    <br/>
+
+
+    Skill: <br />
+    <input type="text" name="title"><br />
+    <br />
+    Skill Definition: <br />
+    <textarea name="body"></textarea><br />
+    <input type="submit">
 </form>
