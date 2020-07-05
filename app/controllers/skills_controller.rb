@@ -1,7 +1,11 @@
 class SkillsController < ApplicationController
     get '/skills' do
-      @skills = Skill.all
-      erb :"skills/index"
+        @skills = Skill.all
+        erb :"skills/index"
+    end
+
+    get '/skills/new' do
+        erb :"skills/new"
     end
 
     get '/skills/:id' do
