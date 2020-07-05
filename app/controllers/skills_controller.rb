@@ -5,6 +5,7 @@ class SkillsController < ApplicationController
     end
 
     get '/skills/new' do
+        @users = User.all
         erb :"skills/new"
     end
 
