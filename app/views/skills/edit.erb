@@ -1,6 +1,6 @@
 <h1>Edit Your Skills Here</h1>
 
-<form method="SKILL" action="/skills">
+<form method="SKILL" action="/skills/<%= @skill.id %>">
     Friend: <br />
     <select name="user_id">
     <% @users.each do |user| %>
