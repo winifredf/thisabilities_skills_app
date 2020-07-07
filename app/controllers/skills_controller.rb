@@ -9,6 +9,13 @@ class SkillsController < ApplicationController
         erb :"skills/new"
     end
 
+    get '/skills/:id/edit' do
+        @users = user.all
+        @skill = Skill.find_by_id(params[:id])
+        erb :"skills/edit"
+
+    end
+
     post '/skills' do
         skill = Skill.new(params)
         if skill.save
