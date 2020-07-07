@@ -16,6 +16,10 @@ class SkillsController < ApplicationController
 
     end
 
+    patch 'skills/:id' do
+        @skill = Skill.find_by_id(params[:id])
+    end
+
     post '/skills' do
         skill = Skill.new(params)
         if skill.save
