@@ -10,14 +10,15 @@ class SkillsController < ApplicationController
     end
 
     get '/skills/:id/edit' do
-        @users = user.all
+        @users = User.all
         @skill = Skill.find_by_id(params[:id])
         erb :"skills/edit"
 
     end
 
-    patch 'skills/:id' do
+    patch '/skills/:id' do
         @skill = Skill.find_by_id(params[:id])
+        binding.pry
     end
 
     post '/skills' do
