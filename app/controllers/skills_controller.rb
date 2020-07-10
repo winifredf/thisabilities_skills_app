@@ -18,7 +18,12 @@ class SkillsController < ApplicationController
 
     patch '/skills/:id' do
         @skill = Skill.find_by_id(params[:id])
-        binding.pry
+        params.delete("_method")
+        if @skill.update
+            redirect "skills/#{@skill.id}"         
+        else
+            redirect "/skills/#{@skills.id}/edit"
+        end
     end
 
     post '/skills' do
