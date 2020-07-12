@@ -1,5 +1,6 @@
 class SkillsController < ApplicationController
     get '/skills' do
+        binding.pry
         @skills = Skill.all
         erb :"skills/index"
     end
