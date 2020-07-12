@@ -7,5 +7,4 @@ desc "Console"
     task :console do
         Pry.start
     end
-end
 
