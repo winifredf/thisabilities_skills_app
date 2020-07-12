@@ -1,6 +1,5 @@
 class SkillsController < ApplicationController
     get '/skills' do
-        binding.pry
         @skills = Skill.all
         erb :"skills/index"
     end
@@ -23,16 +22,16 @@ class SkillsController < ApplicationController
         if @skill.update(params)
             redirect "/skills/#{@skill.id}"         
         else
-            redirect "/skills/#{@skills.id}/edit"
+            redirect "/skills/#{@skill.id}/edit"
         end
     end
 
     post '/skills' do
         skill = Skill.new(params)
         if skill.save
-            redirect "skills/#{skill.id}"
+            redirect "/skills/#{skill.id}"
         else
-            redirect "skills/new"
+            redirect "/skills/new"
             
         end
     end
