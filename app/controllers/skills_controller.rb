@@ -40,4 +40,10 @@ class SkillsController < ApplicationController
         @skill = Skill.find_by_id(params["id"])
         erb :"skills/show"
     end
+
+    delete '/skills/:id' do
+        @skill = Skill.find_by_id(params[:id])
+        @skill.destroy
+        redirect '/skills'
+    end
 end
