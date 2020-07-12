@@ -1,2 +1,10 @@
 <h1><%= @skill.title %> </h1>
 <p><%= @skill.body %></p>
+
+<h2>Would you like to delete this super awesome skill?</h2>
+
+<form method="SKILL" action="/skills/<%= @skill.id %>">
+    <input type="hidden" id="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete">
+
+</form>
