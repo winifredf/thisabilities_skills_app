@@ -6,6 +6,5 @@ class SessionsController < ApplicationController
     post '/login' do
         binding.pry
         user = User.find_by(email: params[:email])
-
     end
 end
