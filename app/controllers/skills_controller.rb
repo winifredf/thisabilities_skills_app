@@ -15,12 +15,12 @@ class SkillsController < ApplicationController
 
     get '/skills/:id/edit' do
         @users = User.all
-        if @skill = Skill.find_by_id(params[:id])
+        @skill = Skill.find_by_id(params[:id])
+        if @skill.user.id == current_user.id
             erb :"skills/edit"
         else
             redirect "/skills"
         end
-
     end
 
     patch '/skills/:id' do
