@@ -52,7 +52,9 @@ class SkillsController < ApplicationController
         @skill = Skill.find_by_id(params[:id])
         if @skill.user.id == current_user.id
             @skill.destroy
-            redirect '/skills'
+            redirect "/skills"
+        else
+            redirect "/skills"
         end
     end
 end
