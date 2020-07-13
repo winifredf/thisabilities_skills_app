@@ -50,7 +50,9 @@ class SkillsController < ApplicationController
 
     delete '/skills/:id' do
         @skill = Skill.find_by_id(params[:id])
-        @skill.destroy
-        redirect '/skills'
+        if @skill.user.id == current_user.id
+            @skill.destroy
+            redirect '/skills'
+        end
     end
 end
