@@ -44,6 +44,7 @@ class SkillsController < ApplicationController
 
     
     get '/skills/:id' do
+        binding.pry
         @skill = Skill.find_by_id(params["id"])
         erb :"skills/show"
     end
