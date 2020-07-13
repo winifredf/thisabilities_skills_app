@@ -1,7 +1,11 @@
 class SkillsController < ApplicationController
     get '/skills' do
-        @skills = Skill.all
-        erb :"skills/index"
+        if logged_in?
+            @skills = Skill.all
+            erb :"skills/index"
+        else
+            redirect "/login"
+        end
     end
 
     get '/skills/new' do
