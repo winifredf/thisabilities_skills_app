@@ -3,7 +3,7 @@
 
 <h2>Would you like to delete this super awesome skill?</h2>
 
-<form method="SKILL" action="/skills/<%= @skill.id %>">
+<form method="POST" action="/skills/<%= @skill.id %>">
     <input type="hidden" id="hidden" name="_method" value="DELETE">
     <input type="submit" value="delete">
 
