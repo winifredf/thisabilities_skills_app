@@ -42,9 +42,16 @@ class SkillsController < ApplicationController
         end
     end
 
-    
+    # post '/skills' do
+    #     skill = Skill.new(params)
+    #     if skill.save
+    #         redirect "/skills/#{skill.id}"
+    #     else
+    #         redirect "/skills/new"     
+    #     end
+    # end
+
     get '/skills/:id' do
-        binding.pry
         @skill = Skill.find_by_id(params["id"])
         erb :"skills/show"
     end
