@@ -4,5 +4,8 @@ class UsersController < ApplicationController
         erb :'/users/signup'
     end
 
+    post "/users" do
+        binding.pry
+    end
 
 end
