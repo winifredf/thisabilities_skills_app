@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     end
 
     post "/users" do
-        binding.pry
+        @user = User.new(params)
     end
 
 end
