@@ -8,4 +8,4 @@ use Rack::MethodOverride
 run ApplicationController
 use SkillsController
 use SessionsController
-use UsersConroller
+use UsersController
