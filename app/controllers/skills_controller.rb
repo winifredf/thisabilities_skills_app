@@ -1,5 +1,6 @@
 class SkillsController < ApplicationController
     get '/skills' do
+        redirect_if_not_logged_in
         if logged_in?
             @skills = Skill.all
             erb :"skills/index"
@@ -9,6 +10,7 @@ class SkillsController < ApplicationController
     end
 
     get '/skills/new' do
+        redirect_if_not_logged_in
         @users = User.all
         erb :"skills/new"
     end
@@ -23,6 +25,7 @@ class SkillsController < ApplicationController
     end
 
     get '/skills/:id/edit' do
+        redirect_if_not_logged_in
         @users = User.all
         @skill = Skill.find_by_id(params[:id])
         if @skill.user.id == current_user.id
@@ -44,6 +47,7 @@ class SkillsController < ApplicationController
 
     
     get '/skills/:id' do
+        redirect_if_not_logged_in
         @skill = Skill.find_by_id(params["id"])
         erb :"skills/show"
     end
