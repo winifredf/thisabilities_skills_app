@@ -1,12 +1,8 @@
 class SkillsController < ApplicationController
     get '/skills' do
         redirect_if_not_logged_in
-        if logged_in?
-            @skills = Skill.all
-            erb :"skills/index"
-        else
-            redirect "/skills"
-        end
+        @skills = Skill.all
+        erb :"skills/index"
     end
 
     get '/skills/new' do
