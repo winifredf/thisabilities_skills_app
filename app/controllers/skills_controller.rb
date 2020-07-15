@@ -1,6 +1,9 @@
 class SkillsController < ApplicationController
     get '/skills' do
         redirect_if_not_logged_in
+        if current_user.skills != []
+            @user_skills current_user.skills.all
+        end
         @skills = Skill.all
         erb :"skills/index"
     end

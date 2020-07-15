@@ -1,5 +1,17 @@
-<h1>Wow! What super amazing skills you have!</h1>
+<h1>Welcome to the Skills Archive</h1>
 
+<h2>Wow! What super amazing skills you have!</h2>
+<% if @user_skills %>
+
+
+
+<ul>
+<% @user_skills.each do |skill| %>
+    <li><a href="skills/<%=skill.id%>"><%= skill.skill %></a></li>
+    <% end %>
+</ul>
+<% end %>
+<h2>Wow! Look at all the super amazing skills you have!</h2>
 <ul>
 <% @skills.each do |skill| %>
     <li><a href="skills/<%=skill.id%>"><%= skill.skill %></a></li>
