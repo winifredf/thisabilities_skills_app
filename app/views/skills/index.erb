@@ -2,18 +2,18 @@
 <h2>You are more the welcome to <a href="/skill/new">create an amazing skill!</a></h2>
 
 <% if @user_skills %>
-
-
-
-<ul>
-<% @user_skills.each do |skill| %>
+<h2>Wow! Look at all the super amazing skills you have!</h2>
+    <ul>
+    <% @user_skills.each do |skill| %>
     <li><a href="skills/<%=skill.id%>"><%= skill.skill %></a></li>
     <% end %>
-</ul>
+    </ul>
 <% end %>
+
+
 <h2>Wow! Look at all the super amazing skills you have!</h2>
 <ul>
 <% @skills.each do |skill| %>
-    <li><a href="skills/<%=skill.id%>"><%= skill.skill %></a></li>
+    <li><a href="skills/<%=skill.id%>"><%= skill.skill %> </a></li>
     <% end %>
 </ul>
