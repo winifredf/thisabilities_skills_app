@@ -113,3 +113,9 @@
     line-height: 24px;
   }
 }
+
+.error{
+  color: white;
+  background-color: red;
+  padding: 5px;
+}
