@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
     post "/users" do
         @user = User.new(params)
-        binding.pry
         if @user && @user.save
             session[:user_id] = @user.id
             redirect "/skills"

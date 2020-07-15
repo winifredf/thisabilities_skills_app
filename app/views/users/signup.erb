@@ -1,5 +1,5 @@
 
-<% @user && @user.errors %>
+<% if @user && @user.errors %>
     <% @user.errors.full_messages.each do |error| %>
         <p class="error"><%=error%></p>
     <% end %>
